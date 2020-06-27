@@ -17,7 +17,7 @@ title: Platopes
 email: kmtopel@gmail.com
 description: Platopes is the online hub of Kevin Topel's philosophical ramblings.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "www.platopes.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://www.platopes.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: KevinTopel
 github_username:  kmtopel
 

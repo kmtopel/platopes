@@ -17,15 +17,15 @@ title: Platopes
 email: kmtopel@gmail.com
 description: Platopes is the online hub of Kevin Topel's philosophical ramblings.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.platopes.com" # the base hostname & protocol for your site, e.g. http://example.com
+url: "www.platopes.com" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: KevinTopel
 github_username:  kmtopel
 
-# Build settings
+# # # Build settings
 markdown: kramdown
-theme: minima
-plugins:
-  - jekyll-feed
+# theme: minima
+# plugins:
+  # - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

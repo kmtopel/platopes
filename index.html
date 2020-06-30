@@ -4,21 +4,19 @@ title: Platopes
 ---
 <div class="container">
   <div class="row">
-    <div class="col-4">
+    <div class="col-2 m-2 p-1">
       <img id='site-logo' src="/assets/images/platopes.png" alt="Uh oh, icon is missing..." />
-      <p class="tiny-text text-muted">posts by category: </p>
-      <div class="side-bar">
-        {% assign categories = site.categories | sort %}
-        {% for cat in categories %}
-          <button class='tiny-text btn border-rounded border p-1'>{{ cat | first }}</p>
-          {% for post in site.categories[cat] %}
-              <p class="tiny-text">|-{{ post.title }}</p>
+      <div id="filterAppContainer">
+        <p class="tiny-text text-muted">filter by category: </p>
+        <div class="side-bar">
+          {% assign categories = site.categories | sort %}
+          {% for cat in categories %}
+            <button class='filter-btn btn btn-sm btn-outline-secondary border-rounded border p-1' aria-label="Close" v-on:click="filterCats" v-bind-"{active:isActive}">{{ cat | first }} <span aria-hidden="false">&times;</span></p>
           {% endfor %}
-        {% endfor %}
-
+        </div>
       </div>
     </div>
-    <div class="col-8">
+    <div class="col-8 m-2 p-1">
       <p> Welcome!</p>
       <p> Platopes is the online hub of Kevin Topel's philosophical ramblings and other informal lighthearted musings.</p>
       <br>
@@ -33,3 +31,27 @@ title: Platopes
     </div>
   </div>
 </div>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript">
+  var cats_elems = document.getElementsByClassName("filter-btn");
+  var cats = [];
+  for (var i=0; i<cats_elems.length; i++)
+  {
+    split_elem = cats_elems[i].innerHTML.split(' <');
+    cat_name = split_elem[0];
+    cats.push(cat_name);
+  }
+  var filterApp = new Vue({
+    data:
+    {
+      isActive: false
+    },
+    methods:
+    {
+      filterCats: function()
+      {
+        this.isisActive = !this.Active;
+      }
+    }
+  })
+</script>

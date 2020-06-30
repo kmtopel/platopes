@@ -12,17 +12,6 @@ p
 {
   font-size: 75%;
 }
-#top-nav-ul
-{
-  list-style-type: none;
-  text-decoration: none;
-}
-#top-nav-ul > li
-{
-  display: inline-block;
-  margin: 25px;
-  margin-left: 20rem;
-}
 #site-logo
 {
   height: 15rem;
@@ -30,6 +19,11 @@ p
   float: left;
   top: 0;
   position: relative;
+}
+#self_portrait
+{
+  width: 25rem;
+  height: auto;
 }
 #side-bar
 {

@@ -12,13 +12,21 @@ p
 {
   font-size: 75%;
 }
-#site-logo
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus,
 {
-  height: auto;
-  width: 20rem;
-  float: left;
-  top: 0;
-  position: relative;
+    outline:0px !important;
+    box-shadow: none !important;
+}
+.btn:focus,
+.btn:active
+{
+    box-shadow: none !important;
+    outline: none !important;
+}
+.strike-through
+{
+  text-decoration: line-through;
 }
 #self_portrait
 {

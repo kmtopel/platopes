@@ -7,7 +7,27 @@ layout: default
       <h1>{{ page.title }}</h1>
       <p class="text-muted">{{ page.date | date_to_string }} / {{ page.category }}</p>
       {{ content }}
-      <a href="/"> _back_</a>
+    </div>
+  </div>
+  <div class="row fixed-bottom text-center">
+    <div class="col">
+      {% if page.previous == nil %}
+        <a class='text-muted' href="{{ page.previous.url }}"></a>
+      {% else %}
+        <a href="{{ page.previous.url }}">previous</a>
+      {% endif %}
+      <a href="/">home</a>
+      {% if page.next == nil %}
+        <a class="text-muted " href="{{ page.next.url }}"></a>
+      {% else %}
+        <a href="{{ page.next.url }}">next</a>
+      {% endif %}
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+
     </div>
   </div>
 </div>

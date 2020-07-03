@@ -1,13 +1,18 @@
 ---
 ---
-body
+html,body
 {
   font-family: 'Courier Prime', monospace;
+  height:100%;
 }
 p
 {
   margin: 15px;
 }
+// .flex-fill
+// {
+//     flex:1;
+// }
 .tiny-text
 {
   font-size: 75%;
@@ -36,6 +41,17 @@ p
 {
   text-decoration: none;
 }
+#see-posts-btn
+{
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+
+}
+// .full-page
+// {
+//   height: 100%;
+// }
 #self_portrait
 {
   width: 25rem;

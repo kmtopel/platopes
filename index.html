@@ -2,12 +2,14 @@
 layout: default
 title: home
 ---
-<!-- comp display -->
-<div class="d-none d-md-flex">
+<!--
+      large screen display
+-->
+<div class="d-none d-lg-flex">
   <div class="container">
     <div class="row">
       <div class="col">
-
+        <h1>large display</h1>
       </div>
       <div class="col">
 
@@ -16,40 +18,73 @@ title: home
   </div>
 </div>
 
-<!-- mobile display -->
-<div class="d-flex d-md-none">
-  <div id='mobile-landing-page' class="container d-block-flex">
-    <div class="flex-row">
-      <div class="flex-col">
-        <div class="d-flex">
-          <img id='site-logo' class='img-fluid d-flex align-self-stretch' src="/assets/images/platopes.png" alt="Uh oh, icon is missing..."/>
-          <a id="see-posts-btn" type="button" name="scroll-down" class="btn btn-lg no-border" href="#recent-posts">
-            <span>
-              <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-arrow-bar-down" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M11.354 10.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L8 12.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                <path fill-rule="evenodd" d="M8 6a.5.5 0 0 1 .5.5V13a.5.5 0 0 1-1 0V6.5A.5.5 0 0 1 8 6zM2 3.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
-              </svg>
-            </span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
+<!--
+      medium display
+-->
+<div class="d-none d-sm-flex d-lg-none">
   <div class="container">
     <div class="row">
       <div class="col">
-        <p> Welcome!</p>
-        <p> Platopes is the online hub of Kevin Topel's philosophical ramblings and other informal lighthearted musings.</p>
-        <br>
-        <p id="recent-posts" class="tiny-text text-muted">Recent Posts</p>
-        <ul id='post-list'>
-          {% for post in site.posts limit:5 %}
-            <li>
-              <h4><a href="{{ post.url }}" class="{{ post.category | slugify }} post-link">{{ post.title }}</a></h4>
-            </li>
-          {% endfor %}
+        <h1>medium display</h1>
+      </div>
+      <div class="col">
 
       </div>
+    </div>
+  </div>
+</div>
+
+
+<!--
+      small display
+-->
+
+<!-- main container -->
+<div class="container d-sm-none">
+
+  <!-- site title -->
+  <div class="row">
+    <div class="col text-center">
+      <h1>Platopes</h1>
+    </div>
+  </div>
+
+  <!-- image row -->
+  <div class="row">
+    <!-- image col -->
+    <div class="col">
+      <!-- thumbnail picture for homepage -->
+      <img id='site-icon' class='img-fluid rounded' src="/assets/images/platopes.png" alt="Uh oh, image is missing..."/>
+    </div>
+    <!-- welcome greeting col -->
+    <div class="col">
+      <!-- welcome greeting text -->
+      <p> Welcome!</p>
+      <p> Platopes is the online hub of Kevin Topel's philosophical ramblings and other informal lighthearted musings.</p>
+    </div>
+  </div>
+
+  <!-- recent post list row -->
+  <div class="row">
+    <!-- recent post list col -->
+    <div class="col text-center">
+      <!-- recent post list header text -->
+      <p class="tiny-text text-muted">Recent Posts</p>
+      <!-- iterate and display five most recent posts -->
+      <ul id="post-list" class="">
+        {% for post in site.posts limit:5 %}
+          <li>
+            <h5 class="text-left"><a class="text-black" href="{{ post.url }}" class="{{ post.category | slugify }} post-link">{{ post.title }}</a></h5>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+
+  <!-- see all posts link -->
+  <div class="row">
+    <div class="col text-center">
+      <a class="btn btn-lg btn-outline-secondary"  href="/archives">See all posts</a>
     </div>
   </div>
 </div>

@@ -7,12 +7,8 @@ html,body
 }
 p
 {
-  margin: 15px;
+  margin: 5px;
 }
-// .flex-fill
-// {
-//     flex:1;
-// }
 .tiny-text
 {
   font-size: 75%;
@@ -29,41 +25,28 @@ p
     box-shadow: none !important;
     outline: none !important;
 }
+ul.nav li a, ul.nav li a:visited {
+    color: black !important;
+}
+
+ul.nav li a:hover, ul.nav li a:active {
+    color:  black !important;
+}
+
+ul.nav li.active a {
+    color: black !important;
+}
 .strike-through
 {
   text-decoration: line-through;
-}
-.side-bar-ul
-{
-  // list-style-type: none;
-}
-.side-bar-li
-{
-  text-decoration: none;
-}
-#see-posts-btn
-{
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-
-}
-// .full-page
-// {
-//   height: 100%;
-// }
-#self_portrait
-{
-  width: 25rem;
-  height: auto;
-}
-#side-bar
-{
-  position: relative;
-  float: left;
 }
 #post-list
 {
   list-style-type: none;
   text-decoration: none;
+}
+#site-icon
+{
+  width: 300px;
+  height: auto;
 }

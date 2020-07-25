@@ -5,7 +5,7 @@ title: home
 <!--
       large screen display
 -->
-<div class="d-none d-lg-flex">
+<div class="d-none d-md-flex">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -21,14 +21,43 @@ title: home
 <!--
       medium display
 -->
-<div class="d-none d-sm-flex d-lg-none">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <h1>medium display</h1>
-      </div>
-      <div class="col">
 
+<!-- image row -->
+<div class="container-fluid d-none d-sm-block d-md-none">
+  <div class="row">
+    <!-- image col -->
+    <div class="col">
+      <!-- thumbnail picture for homepage -->
+      <img id='site-icon' class='rounded' src="/assets/images/platopes.png" alt="Uh oh, image is missing..."/>
+      <p> Welcome!</p>
+      <p> Platopes is the online hub of Kevin Topel's philosophical ramblings and other informal lighthearted musings.</p>
+    </div>
+
+    <div class="col text-center">
+      <div class="card float-left">
+        <!-- recent post list header text -->
+        <p class="card-header tiny-text text-muted">Recent Posts</p>
+        <!-- iterate and display five most recent posts -->
+        <ul id="post-list" class="d-block card-body">
+          {% for post in site.posts limit:5 %}
+            <li class="card-text">
+              <p class="text-left"><a href="{{ post.url }}" class="{{ post.category | slugify }} post-link">{{ post.title }}</a></h5>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <p class="tiny-text text-muted">by category: </p>
+      <div class="container-fluid">
+      {% for category in site.categories %}
+        {% capture cat_name %}{{ category | first }}{% endcapture %}
+          <h5 class="btn btn-sm btn-outline-secondary d-block tiny-text" data-toggle="collapse" aria-expanded="false" data-target="#{{ cat_name | slugify }}-list" aria-controls="{{ cat_name | slugify }}-list"> {{ cat_name }}</h5>
+          <div id="{{ cat_name | slugify }}-list" class="post-list text-left collapse">
+              {% for post in site.categories[cat_name] %}
+                <a class="text-left d-inline-block tiny-text" href={{ post.url}} >{{ post.title }}</a>
+              {% endfor %}
+          </div>
+      {% endfor %}
       </div>
     </div>
   </div>
@@ -40,7 +69,7 @@ title: home
 -->
 
 <!-- main container -->
-<div class="container d-sm-none">
+<div class="container d-block d-sm-none">
 
   <!-- site title -->
   <div class="row">

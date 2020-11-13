@@ -3,11 +3,17 @@
 html,body
 {
   font-family: 'Courier Prime', monospace;
+  margin: 0px;
+  padding: 0px;
   height:100%;
 }
 p
 {
   margin: 5px;
+}
+.smaller-text
+{
+  font-size: 85%;
 }
 .tiny-text
 {
@@ -49,4 +55,13 @@ ul.nav li.active a {
 {
   width: 300px;
   height: auto;
+}
+.archive-post
+{
+  text-decoration: none;
+  list-style-type: none;
+}
+.card
+{
+  border: none;
 }

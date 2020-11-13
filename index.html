@@ -5,7 +5,7 @@ title: home
 <!--
       large screen display
 -->
-<div class="d-none d-md-flex">
+<!-- <div class="d-none d-md-flex">
   <div class="container">
     <div class="row">
       <div class="col">
@@ -16,48 +16,54 @@ title: home
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!--
       medium display
 -->
 
 <!-- image row -->
-<div class="container-fluid d-none d-sm-block d-md-none">
+<div class="container-fluid d-none d-md-block">
   <div class="row">
     <!-- image col -->
-    <div class="col">
+    <div class="col-4">
+      <div class="card">
+        <img id='site-icon' class='border-0 img-fluid img-thumbnail' src="/assets/images/platopes.png" alt="Uh oh, image is missing..."/>
+
+      <div class="card-body">
+        <h5 class="card-title">Welcome!</h5>
+        <p class="tiny-text"> Platopes is the online hub of Kevin Topel's philosophical ramblings and other informal lighthearted musings.</p>
+      </div>
+    </div>
       <!-- thumbnail picture for homepage -->
-      <img id='site-icon' class='rounded' src="/assets/images/platopes.png" alt="Uh oh, image is missing..."/>
-      <p> Welcome!</p>
-      <p> Platopes is the online hub of Kevin Topel's philosophical ramblings and other informal lighthearted musings.</p>
+      <!-- <img id='site-icon' class='rounded' src="/assets/images/platopes.png" alt="Uh oh, image is missing..."/> -->
     </div>
 
-    <div class="col text-center">
-      <div class="card float-left">
-        <!-- recent post list header text -->
-        <p class="card-header tiny-text text-muted">Recent Posts</p>
-        <!-- iterate and display five most recent posts -->
-        <ul id="post-list" class="d-block card-body">
+    <div class="col-5 text-center">
+      <p class="text-muted">Recent Posts</p>
+        <div class="overflow-auto d-block h-50 border rounded">
           {% for post in site.posts limit:5 %}
-            <li class="card-text">
-              <p class="text-left"><a href="{{ post.url }}" class="{{ post.category | slugify }} post-link">{{ post.title }}</a></h5>
-            </li>
-          {% endfor %}
-        </ul>
+            <div class="card d-block border-bottom">
+              <div class="card-body">
+                <h4 class="card-title smaller-text d-block w-100"><a href="{{ post.url }}" class="{{ post.category | slugify }} post-link">{{ post.title }}</a></h4>
+                <h6 class="card-subtitle tiny-text text-muted"> {{post.category}} / {{post.date | date: "%b %d, %Y"}}</h6>
+                <p> {{ post.excerpt | truncate: 100 }}</p>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
       </div>
-
-      <p class="tiny-text text-muted">by category: </p>
-      <div class="container-fluid">
-      {% for category in site.categories %}
-        {% capture cat_name %}{{ category | first }}{% endcapture %}
-          <h5 class="btn btn-sm btn-outline-secondary d-block tiny-text" data-toggle="collapse" aria-expanded="false" data-target="#{{ cat_name | slugify }}-list" aria-controls="{{ cat_name | slugify }}-list"> {{ cat_name }}</h5>
-          <div id="{{ cat_name | slugify }}-list" class="post-list text-left collapse">
-              {% for post in site.categories[cat_name] %}
-                <a class="text-left d-inline-block tiny-text" href={{ post.url}} >{{ post.title }}</a>
-              {% endfor %}
-          </div>
-      {% endfor %}
+    <div class="col-3 overflow-auto">
+          <p class="tiny-text text-muted">by category: </p>
+          {% for category in site.categories %}
+            {% capture cat_name %}{{ category | first }}{% endcapture %}
+              <h5 class="btn btn-sm btn-outline-secondary d-block tiny-text" data-toggle="collapse" aria-expanded="false" data-target="#{{ cat_name | slugify }}-list" aria-controls="{{ cat_name | slugify }}-list"> {{ cat_name }}</h5>
+              <div id="{{ cat_name | slugify }}-list" class="post-list text-left collapse">
+                  {% for post in site.categories[cat_name] %}
+                    <a class="text-left d-block" href={{ post.url}} >{{ post.title }}</a>
+                  {% endfor %}
+              </div>
+          {% endfor %}
       </div>
     </div>
   </div>
@@ -69,7 +75,7 @@ title: home
 -->
 
 <!-- main container -->
-<div class="container d-block d-sm-none">
+<div class="container d-block d-md-none">
 
   <!-- site title -->
   <div class="row">
@@ -89,7 +95,7 @@ title: home
     <div class="col">
       <!-- welcome greeting text -->
       <p> Welcome!</p>
-      <p> Platopes is the online hub of Kevin Topel's philosophical ramblings and other informal lighthearted musings.</p>
+      <p class="tiny-text"> Platopes is the online hub of Kevin Topel's philosophical ramblings and other informal lighthearted musings.</p>
     </div>
   </div>
 

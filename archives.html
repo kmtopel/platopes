@@ -5,28 +5,34 @@ title: Archives
 <div class="container text-center">
   <h1>All Posts</h1>
   <div class="row">
+    <div class="col-1">
+      <!-- empty column for padding -->
+    </div>
     <div class="col text-left">
-      <h2>Newest to Oldest</h2>
+      <h5>Newest to Oldest</h5>
       <ul>
       {% for post in site.posts %}
-        <li class='side-bar-li'><a href={{ post.url }}><h4>{{ post.title }}</h4></a></li>
+        <li class='archive-post'><a href={{ post.url }}>{{ post.title }}</a></li>
       {% endfor %}
       </ul>
     </div>
 
     <div class="col text-left">
-      <h2>By Category</h2>
+      <h5>By Category</h5>
       {% for category in site.categories %}
         {% capture cat_name %}{{ category | first }}{% endcapture %}
-        <h5 class="text-muted"> {{ cat_name }}</h5>
+        <h6 class="text-muted"> {{ cat_name }}</h6>
         <div id="{{ cat_name | slugify }}-list">
           <ul>
             {% for post in site.categories[cat_name] %}
-              <li><a href={{ post.url}} ><h4>{{ post.title }}</h4></a></li>
+              <li class="archive-post"><a href={{ post.url}} >{{ post.title }}</a></li>
             {% endfor %}
           </ul>
         </div>
       {% endfor %}
+    </div>
+    <div class="col-1">
+      <!-- empty column for padding -->
     </div>
   </div>
 </div>

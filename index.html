@@ -40,12 +40,12 @@ title: home
     </div>
 
     <div class="col-5 text-center">
-      <p class="text-muted">Recent Posts</p>
+      <p class="text-left tiny-text text-muted">by most recent:</p>
         <div class="overflow-auto d-block h-50 border rounded">
           {% for post in site.posts limit:5 %}
             <div class="card d-block border-bottom">
               <div class="card-body">
-                <h4 class="card-title smaller-text d-block w-100"><a href="{{ post.url }}" class="{{ post.category | slugify }} post-link">{{ post.title }}</a></h4>
+                <h6 class="card-title d-block w-100"><a href="{{ post.url }}" class="{{ post.category | slugify }} post-link">{{ post.title }}</a></h6>
                 <h6 class="card-subtitle tiny-text text-muted"> {{post.category}} / {{post.date | date: "%b %d, %Y"}}</h6>
                 <p> {{ post.excerpt | truncate: 100 }}</p>
               </div>
@@ -76,13 +76,6 @@ title: home
 
 <!-- main container -->
 <div class="container d-block d-md-none">
-
-  <!-- site title -->
-  <div class="row">
-    <div class="col text-center">
-      <h1>Platopes</h1>
-    </div>
-  </div>
 
   <!-- image row -->
   <div class="row">

@@ -2,31 +2,16 @@
 layout: default
 title: Archives
 ---
-<div class="container text-center">
+<div class="container text-center justify-content-center">
   <h1>All Posts</h1>
   <div class="row">
-    <div class="col text-left">
+    <div class="col">
       <h5>Newest to Oldest</h5>
       <ul>
       {% for post in site.posts %}
         <li class='archive-post'><a href={{ post.url }}>{{ post.title }}</a></li>
       {% endfor %}
       </ul>
-    </div>
-
-    <div class="col text-left">
-      <h5>By Category</h5>
-      {% for category in site.categories %}
-        {% capture cat_name %}{{ category | first }}{% endcapture %}
-        <h6 class="text-muted"> {{ cat_name }}</h6>
-        <div id="{{ cat_name | slugify }}-list">
-          <ul>
-            {% for post in site.categories[cat_name] %}
-              <li class="archive-post"><a href={{ post.url}} >{{ post.title }}</a></li>
-            {% endfor %}
-          </ul>
-        </div>
-      {% endfor %}
     </div>
   </div>
 </div>

@@ -1,7 +1,7 @@
 ---
 layout: post
 category: philosophy of human nature
-title: Reflection on Free Will
+title: What Do We Mean By "Free Will"?
 ---
 <i>If all the terms are clear</i>, a proposition can either be true or false. Why the emphasis you ask? Because it seems that when people debate the question, "does free will exist?", the discussion takes place before any coherent definition of "free will" is offered. As for my own thinking, I don't believe I have yet to move past this point, because I haven't encountered a satisfactory definition that seems to fully capture the elusive phenomenon we're looking to label.
 

@@ -7,9 +7,8 @@ html,body
   padding: 0px;
   height:100%;
 }
-p
-{
-  margin: 5px;
+.post-content p {
+  margin-bottom: 25px;
 }
 .smaller-text
 {
@@ -64,4 +63,15 @@ ul.nav li.active a {
 .card
 {
   border: none;
+}
+.p {
+
+}
+footer {
+
+  bottom: 0;
+}
+.blockquote {
+  padding: .5rem 1rem;
+  border-left: .25rem solid #eceeef;
 }

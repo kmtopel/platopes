@@ -23,7 +23,7 @@ title: home
 -->
 
 <!-- image row -->
-<div class="container-fluid d-none d-md-block">
+<div class="container-fluid d-none d-md-block overflow-auto">
   <div class=" row">
     <div class="col ">
       <div class="text-center">
@@ -33,13 +33,13 @@ title: home
   </div>
   <div class="row">
     <!-- image col -->
-    <div class="col-4">
+    <div class="col-3">
       <div class="card">
         <img id='site-icon' class='border-0 img-fluid img-thumbnail' src="/assets/images/platopes.png" alt="Uh oh, image is missing..."/>
 
       <div class="card-body">
         <h5 class="card-title">Welcome!</h5>
-        <p class="tiny-text"> Platopes is the online hub of Kevin Topel's philosophical ramblings and other informal lighthearted musings.</p>
+        <p class=""> Platopes is the online hub of Kevin Topel's philosophical ramblings and other informal lighthearted musings.</p>
       </div>
     </div>
       <!-- thumbnail picture for homepage -->
@@ -47,21 +47,22 @@ title: home
     </div>
 
     <div class="col-5 text-center">
-      <p class="text-left tiny-text text-muted">by most recent:</p>
-        <div class="overflow-auto d-block h-50 border rounded">
+      <p class="text-left tiny-text">by most recent:</p>
+        <div class="overflow-auto d-block h-90  rounded">
           {% for post in site.posts limit:5 %}
             <div class="card d-block border-bottom">
               <div class="card-body">
-                <h6 class="card-title d-block w-100"><a href="{{ post.url }}" class="{{ post.category | slugify }} post-link">{{ post.title }}</a></h6>
-                <h6 class="card-subtitle tiny-text text-muted"> {{post.category}} / {{post.date | date: "%b %d, %Y"}}</h6>
-                <p> {{ post.excerpt | truncate: 100 }}</p>
+                <span class="tiny-text text-muted">{{post.date | date: "%b %d, %Y"}}</span>
+                <h6 class="card-title d-block w-100"><a href="{{ post.url }}" class="{{ post.category | slugify }} post-link"> {{ post.title }}</a></h6>
+                <!-- <h6 class="card-subtitle tiny-text text-muted"> {{post.category}} / {{post.date | date: "%b %d, %Y"}}</h6> -->
+                <p class="tiny-text"> {{ post.thesis }}</p>
               </div>
             </div>
             {% endfor %}
         </div>
       </div>
-    <div class="col-3 overflow-auto">
-          <p class="tiny-text text-muted">by category: </p>
+    <div class="col-4 overflow-auto">
+          <p class="tiny-text">by category: </p>
           {% for category in site.categories %}
             {% capture cat_name %}{{ category | first }}{% endcapture %}
               <h5 class="btn btn-sm btn-outline-secondary d-block tiny-text" data-toggle="collapse" aria-expanded="false" data-target="#{{ cat_name | slugify }}-list" aria-controls="{{ cat_name | slugify }}-list"> {{ cat_name }}</h5>
@@ -73,8 +74,16 @@ title: home
           {% endfor %}
       </div>
     </div>
+
+    <footer class="footer text-muted tiny-text text-center">
+      <div class="row">
+        <div class="col text-center">
+          Copyright &copy 2020 Kevin Topel
+        </div>
+      </div>
+    </footer>
   </div>
-</div>
+
 
 
 <!--
@@ -82,7 +91,7 @@ title: home
 -->
 
 <!-- main container -->
-<div class="container d-block d-md-none">
+<div class="container d-block d-md-none overflow-auto">
   <h1 class="text-center">Platopes</h1>
   <!-- image row -->
   <div class="row">
@@ -119,7 +128,14 @@ title: home
   <!-- see all posts link -->
   <div class="row">
     <div class="col text-center">
-      <a class="btn btn-lg btn-outline-secondary"  href="/archives">See all posts</a>
+      <a class="btn btn-sm btn-outline-secondary"  href="/archives">See all posts</a>
     </div>
   </div>
+  <footer class="footer text-muted tiny-text text-center">
+    <div class="row">
+      <div class="col text-center">
+        Copyright &copy 2020 Kevin Topel
+      </div>
+    </div>
+  </footer>
 </div>
